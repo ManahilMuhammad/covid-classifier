@@ -12,9 +12,9 @@ The guided project trains a ResNet-18 and shows predictions on a few sample imag
 
 | | Course | This project |
 |---|---|---|
-| Evaluation | Accuracy on a few sample batches | A held-out test set scored once, with per-class precision, recall, F1, ROC AUC and a confusion matrix |
+| Evaluation | Accuracy only on a 90-image test set | A 1,515-image held-out test set scored once, with per-class precision, recall, F1, ROC AUC and a confusion matrix |
 | Data split | Train/test only | Train/validation/test (8:1:1, stratified) with the epoch chosen on validation |
-| Class imbalance | Not handled | Class-balanced sampling; balanced accuracy used for model selection |
+| Class imbalance | Implicitly balanced; each sample's class is drawn uniformly at random | Explicit class-balanced sampling; balanced accuracy used for model selection |
 | Augmentation | Horizontal flip | Small rotations, shifts, zooms and contrast jitter with no horizontal flip because chest anatomy is not symmetric |
 | Explainability | None | Grad-CAM written with PyTorch hooks and used to check the model's mistakes |
 | Code | A single notebook | A Python package with command-line scripts, plus a notebook to walk through results |
